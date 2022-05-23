@@ -107,7 +107,8 @@ function likeDislike(post){
 
     likeButton.addEventListener("click", iLikeIt);
 
-    function iLikeIt(){
+    function iLikeIt(event){
+        event.preventDefault();
         likeButton.classList.add("like-button--liked");
         post.likes++;
         likedPostsId.push(post.id);
@@ -119,7 +120,8 @@ function likeDislike(post){
         likeButton.addEventListener("click", iDontLikeIt);
     }
 
-    function iDontLikeIt(){
+    function iDontLikeIt(event){
+        event.preventDefault();
         likeButton.classList.remove("like-button--liked");
         post.likes--;
 
